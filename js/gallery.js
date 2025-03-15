@@ -66,14 +66,25 @@ const images = [
 
 const gallery=document.querySelector('.gallery')
 images.map(image=>{
+
+
   const item=document.createElement('li');
+  item.classList.add('gallery-item');
+  const link=document.createElement('a');
+  link.classList.add('gallery-link')
   const img=document.createElement('img');
+  img.classList.add('gallery-image')
+  link.href=image.original;
   img.src=image.preview;
   img.alt=image.description;
-  gallery.append(item)
-  item.append(img)
+  img.dataset.source=image.original;
+  link.append(img);
+  item.append(link);
+  gallery.append(item);
+  console.log(link)
+  
 })
-console.log(gallery)
+// console.log(gallery)
 // function createItem(preview, original, description){
 //     const markup=`<li class="gallery-item">
 //                 <a class="gallery-link" href=${original}>
