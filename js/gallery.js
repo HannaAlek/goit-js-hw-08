@@ -71,9 +71,9 @@ images.map(image=>{
   const item=document.createElement('li');
   item.classList.add('gallery-item');
   const link=document.createElement('a');
-  link.classList.add('gallery-link')
+  link.classList.add('gallery-link');
   const img=document.createElement('img');
-  img.classList.add('gallery-image')
+  img.classList.add('gallery-image');
   link.href=image.original;
   img.src=image.preview;
   img.alt=image.description;
@@ -81,9 +81,13 @@ images.map(image=>{
   link.append(img);
   item.append(link);
   gallery.append(item);
-  console.log(link)
-  
+  // console.log(link)
+  img.addEventListener('click',(event)=>{
+    event.preventDefault();
+  });
+
 })
+
 // console.log(gallery)
 // function createItem(preview, original, description){
 //     const markup=`<li class="gallery-item">

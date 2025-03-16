@@ -1,0 +1,17 @@
+/* body{
+  padding: auto;
+} */
+ul{
+list-style-type: none;
+display: flex;
+flex-wrap: wrap;
+flex-direction:row;
+gap: 18px;
+}
+
+.gallery-item{
+    padding: auto;
+}
+.gallery-image{
+  width: 480px;  
+}
