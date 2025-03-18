@@ -4,7 +4,7 @@ display: flex;
 flex-wrap: wrap;
 flex-direction:row;
 gap: 24px;
-padding: 24px 156px;
+padding: 24px 150px;
 justify-content: center;
 }
 
