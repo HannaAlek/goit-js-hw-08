@@ -64,47 +64,35 @@ const images = [
   },
 ];
 
-const gallery=document.querySelector('.gallery')
-images.map(image=>{
+const gallery=document.querySelector('.gallery');
+gallery.insertAdjacentHTML('beforeend', createItem(images));
+function createItem(item){
+return item.map((img)=>`
+<li class="gallery-item">
+  <a class="gallery-link" href="${img.original}">
+    <img
+      class="gallery-image"
+      src="${img.preview}"
+      data-source="${img.original}"
+      alt="${img.description}"
+    />
+  </a>
+</li>
+`).join('');
+}
+gallery.addEventListener('click', (event)=>{
+  event.preventDefault();
+  if(!event.target.classList.contains("gallery-image")){
+  return;}
+  
 
 
-  const item=document.createElement('li');
-  item.classList.add('gallery-item');
-  const link=document.createElement('a');
-  link.classList.add('gallery-link');
-  const img=document.createElement('img');
-  img.classList.add('gallery-image');
-  link.href=image.original;
-  img.src=image.preview;
-  img.alt=image.description;
-  img.dataset.source=image.original;
-  link.append(img);
-  item.append(link);
-  gallery.append(item);
-  // console.log(link)
-  img.addEventListener('click',(event)=>{
-    event.preventDefault();
-  });
-
-})
-
-// console.log(gallery)
-// function createItem(preview, original, description){
-//     const markup=`<li class="gallery-item">
-//                 <a class="gallery-link" href=${original}>
-//                 <img
-//                     class="gallery-image"
-//                     src=${preview}
-//                     data-source=${original}
-//                     alt=${description}
-//                  />
-//                  </a>
-//                 </li>`
-//                 console.log(markup.value);
-// }
-
-// let markup="";
-// for (let image of images){
-//     markup+=createItem(image)
-// }
-// gallery.innerHTML=markup;    
+});
+ 
+const instance=basicLights.create(`
+  <div class="modal">
+  <img src="${event.target.dataset.source}" alt=""/>
+  </div>
+  `).join('')
+instance.show()
+console.log(instance)

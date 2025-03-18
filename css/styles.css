@@ -1,17 +1,30 @@
-/* body{
-  padding: auto;
-} */
 ul{
 list-style-type: none;
 display: flex;
 flex-wrap: wrap;
 flex-direction:row;
-gap: 18px;
+gap: 24px;
+padding: 24px 156px;
+justify-content: center;
 }
 
-.gallery-item{
-    padding: auto;
-}
 .gallery-image{
-  width: 480px;  
+  width: 360px;
+  height: 200px;  
+}
+
+.modal{
+  width: 500px;
+  padding: 20px;
+  user-select: none;
+  box-shadow: 0px 0px 10px rgba(46, 47, 66, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal img{
+  max-width: 400px;
+  height: 500px;
+  margin-bottom: 10px;
 }
