@@ -4,9 +4,8 @@ display: flex;
 flex-wrap: wrap;
 flex-direction:row;
 gap: 24px;
-padding: 24px 140px;
+padding: auto;
 justify-content: center;
-max-width: 1128px;
 }
 
 .gallery-image{
