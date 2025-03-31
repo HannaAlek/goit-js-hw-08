@@ -85,12 +85,11 @@ gallery.addEventListener('click', (event)=>{
   if(!event.target.classList.contains("gallery-image")){
   return;}
   else{
-  const content=document.createElement('div');
-  content.classList.add("modal")
-  const largeImage=document.createElement('img');
-  largeImage.src=`${event.target.dataset.source}`;
-  content.append(largeImage);
-  const instance=basicLightbox.create(content);
+  const instance=basicLightbox.create(`
+    <div class="modal">
+      <img src="${event.target.dataset.source}"/>
+    </div>
+    `);
   instance.show()
   }
 });
